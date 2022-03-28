@@ -1,0 +1,19 @@
+:root{
+    /* colors  */
+
+    --white:hsl(0, 0%, 100%);
+    --black:hsl(0, 0%, 0%);
+    --gray:hsl(0, 0%, 55%);
+    --dark-gray:hsl(0, 0%, 41%);
+
+    /* sizes  */
+    --body-size: 15px;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: font-family: 'Alata', sans-serif;;
+}
