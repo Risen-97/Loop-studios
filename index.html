@@ -16,10 +16,85 @@
       href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/styles/style.css" />
     <title>Frontend Mentor | Loopstudios landing page</title>
   </head>
   <body>
+    <nav class="nav">
+      <div class="container">
+        <div class="nav__logo">loopstudios</div>
+        <ul class="nav__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+        <div class="nav__menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero__title container">
+        <h1>
+          Immersive<br />
+          experiences<br />
+          that deliver
+        </h1>
+      </div>
+      <div class="hero__image">
+        <img
+          src="/assets/images/desktop/image-hero.jpg"
+          alt=""
+          class="hero__desktop"
+        />
+        <img
+          src="/assets/images/mobile/image-hero.jpg"
+          alt=""
+          class="hero__mobile"
+        />
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="about">
+        <div class="about__content">
+          <div class="about__image">
+            <img
+              src="/assets/images/desktop/image-interactive.jpg"
+              class="desktop"
+              alt=""
+            />
+            <img
+              src="/assets/images/mobile/image-interactive.jpg"
+              class="mobile"
+              alt=""
+            />
+          </div>
+
+          <div class="about__text">
+            <h2>The leader in interactive VR</h2>
+            <p>
+              Founded in 2011, Loopstudios has been producing world-class
+              virtual reality projects for some of the best companies around the
+              globe. Our award-winning creations have transformed businesses
+              through digital experiences that bind to their brand.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <script src="./js/app.js"></script>
     <script
       type="module"

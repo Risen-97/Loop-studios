@@ -1,19 +1,272 @@
-:root{
-    /* colors  */
+:root {
+  /* colors  */
 
-    --white:hsl(0, 0%, 100%);
-    --black:hsl(0, 0%, 0%);
-    --gray:hsl(0, 0%, 55%);
-    --dark-gray:hsl(0, 0%, 41%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --gray: hsl(0, 0%, 55%);
+  --dark-gray: hsl(0, 0%, 41%);
 
-    /* sizes  */
-    --body-size: 15px;
-
+  /* sizes  */
+  --body-size: 15px;
+  --max-w: 1400px;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: font-family: 'Alata', sans-serif;;
+  font-family: "Alata", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 200vh;
+}
+
+/* utilit  */
+.container {
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* layout  */
+.nav {
+  position: fixed;
+  height: 80px;
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav .container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 3rem;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-size: 2rem;
+  z-index: 20;
+}
+.nav__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  gap: 3rem;
+  padding: 3rem;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  font-size: 3rem;
+  width: 100%;
+  height: 100vh;
+  transition: 0.5s transform;
+}
+.nav__links a {
+  text-decoration: none;
+  color: #fff;
+  padding-bottom: 1rem;
+  transition: 1s;
+}
+
+.nav__links a:hover {
+  border-bottom: 1px solid var(--white);
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.nav__menu .bar {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+
+.nav.close .nav__menu .bar:nth-child(2) {
+  opacity: 0;
+}
+.nav.close .nav__menu .bar:first-child {
+  transform: rotate(-45deg) translate(-11px, -6.5px);
+}
+.nav.close .nav__menu .bar:last-child {
+  transform: rotate(45deg) translate(-20px, 0px);
+}
+
+.nav.close .nav__links {
+  transform: translateX(0);
+}
+
+.hero {
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero__title {
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.hero__title h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-family: "Josefin Sans", sans-serif;
+  border: 1px solid #fff;
+  padding: 4rem;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.hero__image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.hero__image::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: block;
+}
+
+.about {
+  padding: 19rem 0;
+  overflow: hidden;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.about__text {
+  background-color: var(--white);
+  text-align: center;
+  padding: 4rem 0;
+  padding-bottom: 2rem;
+}
+
+.about__text h2 {
+  font-size: 4rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.about__text p {
+  font-size: 1.4rem;
+  line-height: 2;
+  color: var(--gray);
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0;
+    max-width: var(--max-w);
+  }
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .nav__menu {
+    display: none;
+  }
+
+  .nav__links {
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    transform: translateX(0);
+    padding: 0;
+    font-size: var(--body-size);
+  }
+
+  .nav__logo {
+    font-size: 3rem;
+  }
+  .hero__title h1 {
+    font-size: 7.5rem;
+    padding-right: 12rem;
+  }
+
+  .about__text p {
+    max-width: 420px;
+    font-size: 1.4rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about__content {
+    align-items: start;
+  }
+
+  .about__text {
+    position: absolute;
+    bottom: 0;
+    right: 12rem;
+    padding: 7rem;
+    padding-bottom: 0;
+    text-align: left;
+  }
+
+  .about__text h2 {
+    font-size: 6rem;
+    max-width: 500px;
+  }
+  .about__text p {
+    margin: 0;
+  }
 }
